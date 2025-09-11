@@ -20,8 +20,14 @@ Cursor等AI工具直接生成调用二方（内部调用）、三方包（外部
 - ⚙️ **灵活配置**: 支持外部指定CFR工具路径
 - 🤖 **LLM集成**: 通过MCP协议为LLM提供Java代码分析能力
 
+## 使用示例
+### 在IDE中注册mcp服务
+![工具列表](./doc/mcp-tools.jpg)
 
-## 使用方式
+### 在智能体对话中使用mcp
+![示例](./doc/mcp-use-case.jpg)
+
+## 使用说明
 
 ### MCP服务配置
 参考[mcp服务配置文件](./mcp-server-config.json)内容，添加到MCP客户端配置文件中。配置示例
