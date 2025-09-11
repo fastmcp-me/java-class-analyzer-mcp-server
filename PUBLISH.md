@@ -5,10 +5,11 @@
 ### 1. 准备工作
 
 确保你已经：
-- [ ] 在npm上注册了账号
-- [ ] 登录到npm：`npm login`
+- [ ] 在npm上注册了账号，如`https://registry.npmjs.org`
+- [ ] 登录到npm：`npm login --registry https://registry.npmjs.org`
 - [ ] 更新了package.json中的repository URL
 - [ ] 更新了README.md中的GitHub链接
+- [ ] 确认本地镜像源一致。使用`npm config get registry`查看和`npm config set registry https://registry.npmjs.org`设置
 
 ### 2. 发布步骤
 

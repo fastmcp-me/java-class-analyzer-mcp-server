@@ -36,8 +36,8 @@
         "maven",
         "dependency-analysis"
     ],
-    "author": "",
-    "license": "MIT",
+    "author": "handsomestWei",
+    "license": "Apache License 2.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/handsomestWei/java-class-analyzer-mcp-server.git"
