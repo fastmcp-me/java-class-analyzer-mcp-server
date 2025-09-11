@@ -3,21 +3,49 @@
     "version": "1.0.0",
     "description": "MCP server for Java class file analysis and decompilation",
     "main": "dist/index.js",
+    "bin": {
+        "java-class-analyzer-mcp": "dist/cli.js"
+    },
     "type": "module",
+    "files": [
+        "dist/**/*",
+        "lib/**/*",
+        "README.md",
+        "LICENSE"
+    ],
     "scripts": {
         "build": "tsc",
         "start": "node dist/index.js",
         "dev": "tsx src/index.ts",
-        "test": "jest"
+        "test": "jest",
+        "prepublishOnly": "npm run build",
+        "prepack": "npm run build",
+        "publish:npm": "npm publish",
+        "publish:beta": "npm publish --tag beta",
+        "version:patch": "npm version patch",
+        "version:minor": "npm version minor",
+        "version:major": "npm version major"
     },
     "keywords": [
         "mcp",
         "java",
         "decompilation",
-        "class-analyzer"
+        "class-analyzer",
+        "model-context-protocol",
+        "java-decompiler",
+        "maven",
+        "dependency-analysis"
     ],
     "author": "",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/handsomestWei/java-class-analyzer-mcp-server.git"
+    },
+    "homepage": "https://github.com/handsomestWei/java-class-analyzer-mcp-server#readme",
+    "engines": {
+        "node": ">=16.0.0"
+    },
     "dependencies": {
         "@modelcontextprotocol/sdk": "^0.4.0",
         "commander": "^11.1.0",

@@ -11,9 +11,10 @@ Cursor等AI工具直接生成调用二方（内部调用）、三方包（外部
 
 ## 功能特性
 
+- **🚀使用方便**：mcp服务基于TypeScript实现，使用npm打包，方便分发和安装，弱环境依赖。
 - 🔍 **依赖扫描**: 自动扫描Maven项目的所有依赖JAR包
 - 📦 **类索引**: 建立类全名到JAR包路径的映射索引
-- 🔄 **反编译**: 使用CFR工具实时反编译.class文件为Java源码
+- 🔄 **反编译**: 使用CFR工具（已内置有）实时反编译.class文件为Java源码
 - 📊 **类分析**: 分析Java类的结构、方法、字段、继承关系等
 - 💾 **智能缓存**: 按包名结构缓存反编译结果，支持缓存控制
 - 🚀 **自动索引**: 执行分析前自动检查并创建索引
@@ -29,15 +30,71 @@ Cursor等AI工具直接生成调用二方（内部调用）、三方包（外部
 
 ## 使用说明
 
+### mcp服务安装
+
+#### 全局安装（推荐）
+
+```bash
+npm install -g java-class-analyzer-mcp-server
+```
+
+安装后可以直接使用 `java-class-analyzer-mcp` 命令。
+
+#### 本地安装
+
+```bash
+npm install java-class-analyzer-mcp-server
+```
+
+#### 从源码安装
+
+```bash
+git clone https://github.com/handsomestWei/java-class-analyzer-mcp-server.git
+cd java-class-analyzer-mcp-server
+npm install
+npm run build
+```
+
 ### MCP服务配置
-参考[mcp服务配置文件](./mcp-server-config.json)内容，添加到MCP客户端配置文件中。配置示例
+
+#### 方法1：使用生成的配置（推荐）
+
+运行以下命令生成配置模板：
+```bash
+java-class-analyzer-mcp config -o mcp-client-config.json
+```
+
+然后将生成的配置内容添加到你的MCP客户端配置文件中。
+
+#### 方法2：手动配置
+
+参考以下配置示例，添加到MCP客户端配置文件中：
+
+**全局安装后的配置：**
+```json
+{
+    "mcpServers": {
+        "java-class-analyzer": {
+            "command": "java-class-analyzer-mcp",
+            "args": ["start"],
+            "env": {
+                "NODE_ENV": "production",
+                "MAVEN_REPO": "D:/maven/repository",
+                "JAVA_HOME": "C:/Program Files/Java/jdk-11"
+            }
+        }
+    }
+}
+```
+
+**本地安装后的配置：**
 ```json
 {
     "mcpServers": {
         "java-class-analyzer": {
             "command": "node",
             "args": [
-                "/path/java-class-analyzer-mcp-server/dist/index.js"
+                "node_modules/java-class-analyzer-mcp-server/dist/index.js"
             ],
             "env": {
                 "NODE_ENV": "production",
@@ -93,8 +150,8 @@ Cursor等AI工具直接生成调用二方（内部调用）、三方包（外部
 **参数:**
 - `className` (string): 要反编译的Java类全名，如：com.example.QueryBizOrderDO
 - `projectPath` (string): Maven项目根目录路径
-- `useCache` (boolean, 可选): 是否使用缓存，默认true
-- `cfrPath` (string, 可选): CFR反编译工具的jar包路径
+- `useCache` (boolean, 可选): 是否使用缓存，默认true。避免每次都重复生成。
+- `cfrPath` (string, 可选): CFR反编译工具的jar包路径。已内置有，可以额外指定版本。
 
 **示例:**
 ```json

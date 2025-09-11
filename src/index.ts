@@ -10,7 +10,7 @@ import { JavaClassAnalyzer } from './analyzer/JavaClassAnalyzer.js';
 import { DependencyScanner } from './scanner/DependencyScanner.js';
 import { DecompilerService } from './decompiler/DecompilerService.js';
 
-class JavaClassAnalyzerMCPServer {
+export class JavaClassAnalyzerMCPServer {
     private server: Server;
     private analyzer: JavaClassAnalyzer;
     private scanner: DependencyScanner;
