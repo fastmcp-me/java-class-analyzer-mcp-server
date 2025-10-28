@@ -1,3 +1,10 @@
+[![Add to Cursor](https://fastmcp.me/badges/cursor_dark.svg)](https://fastmcp.me/MCP/Details/1341/java-class-analyzer)
+[![Add to VS Code](https://fastmcp.me/badges/vscode_dark.svg)](https://fastmcp.me/MCP/Details/1341/java-class-analyzer)
+[![Add to Claude](https://fastmcp.me/badges/claude_dark.svg)](https://fastmcp.me/MCP/Details/1341/java-class-analyzer)
+[![Add to ChatGPT](https://fastmcp.me/badges/chatgpt_dark.svg)](https://fastmcp.me/MCP/Details/1341/java-class-analyzer)
+[![Add to Codex](https://fastmcp.me/badges/codex_dark.svg)](https://fastmcp.me/MCP/Details/1341/java-class-analyzer)
+[![Add to Gemini](https://fastmcp.me/badges/gemini_dark.svg)](https://fastmcp.me/MCP/Details/1341/java-class-analyzer)
+
 # Java Class Analyzer MCP Server
 
 一个基于Model Context Protocol (MCP)的Java类分析服务，可以扫描Maven项目依赖、反编译Java类文件、获取class方法列表等详细信息，并提供给LLM进行代码分析。
